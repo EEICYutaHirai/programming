@@ -1,7 +1,10 @@
 #include <iostream>
+#include <string>
+#include <algorithm>
 
 using namespace std;
 
 int main(){
-    cout << 999/1000 << endl;
+    string S = "abc";
+    cout << S.find("d");
 }
