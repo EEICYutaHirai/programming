@@ -1,6 +1,3 @@
-/*
-総当たりで求めるとどうなるか試してみる
-*/
 
 #include <iostream>
 
@@ -16,5 +13,12 @@ int main()
     for (int i = 0; i < D; i++)
     {
         cin >> p[i] >> c[i];
+    }
+
+    for (int i = 0; i < D; i++)
+    {
+        for (int j = 0; j < p[i]; j++)
+        {
+        }
     }
 }
