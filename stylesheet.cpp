@@ -1,5 +1,5 @@
 /*
-title:A+B Problem
+title:
 
 url:
 
