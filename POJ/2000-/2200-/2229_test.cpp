@@ -6,6 +6,10 @@ using namespace std;
 int b_data[32][32][32][32][32][32];
 int ans;
 
+/*
+31を入力すると、３１までの答えを出してくれる。このことから、法則を推測できる。
+*/
+
 void solve(int n0, int n1, int n2, int n3, int n4, int n5)
 {
     if (b_data[n0][n1][n2][n3][n4][n5] == 0)
@@ -39,6 +43,11 @@ int main()
 {
     int N;
     cin >> N;
-    solve(N, 0, 0, 0, 0, 0);
-    cout << ans << endl;
+    for (int i = 1; i <= N; i++)
+    {
+        ans = 0;
+        solve(i, 0, 0, 0, 0, 0);
+        cout << i << ": ";
+        cout << ans << endl;
+    }
 }
