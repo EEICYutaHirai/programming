@@ -1,3 +1,5 @@
+//POJ, compile error
+
 #include <iostream>
 #include <utility>
 #include <cmath>
@@ -8,14 +10,13 @@
 
 using namespace std;
 
-//int dp[1000000 + 1][1001];
+int dp[1000000 + 1][1001];
 
 int main()
 {
     int N, M, R;
     pair<pair<int, int>, int> milk_time[1001];
     cin >> N >> M >> R;
-    vector<vector<int> > dp = vector<vector<int> >(1000000 + 1, vector<int>(1001, 0));
     for (int i = 0; i < M; i++)
     {
         cin >>
