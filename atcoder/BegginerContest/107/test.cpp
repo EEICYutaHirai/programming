@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <queue>
 
 using namespace std;
 
@@ -12,6 +13,8 @@ int main()
     cin >> tmp;
     cout << tmp << endl;
     */
+
+    /*
     int j;
     for (j = 0; j < 10; j++)
     {
@@ -19,4 +22,10 @@ int main()
             break;
     }
     cout << j << endl;
+    */
+
+    priority_queue<int> queue;
+    queue.push(3);
+    queue.push(1);
+    cout << queue[1];
 }

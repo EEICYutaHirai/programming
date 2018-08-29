@@ -41,7 +41,7 @@ int main()
         swap(neg[i], neg[n_neg - i - 1]);
     }
 
-    long long ans = numeric_limits<long>::max();
+    long long ans = numeric_limits<long long>::max();
 
     //iは何回、正のろうそくを回収するか
     //負のろうそくは K-i 回回収することになる。

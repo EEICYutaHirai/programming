@@ -12,16 +12,23 @@ url:
 #include <queue>
 #include <limits>
 #include <string>
-#include <utility>
-#include <cstring>
+#include <limits>
 
 using namespace std;
 
 #define REP(i, n) for (int i = 0; i < (n); i++)
 #define INF 1000000007
 
-typedef pair<int, int> p_i;
+struct Test
+{
+    int operator+(int i)
+    {
+        return 2 + i;
+    }
+};
 
 int main()
 {
+    Test test;
+    cout << test + 3 << endl;
 }

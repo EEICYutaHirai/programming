@@ -7,6 +7,7 @@
 using namespace std;
 
 //汚い解き方
+//charだとめんどくさいのでstringを使おう。
 
 int main()
 {
