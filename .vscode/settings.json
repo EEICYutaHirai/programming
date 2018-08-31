@@ -10,6 +10,12 @@
         "string_view": "cpp",
         "vector": "cpp",
         "bitset": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "xstring": "cpp",
+        "xutility": "cpp",
+        "algorithm": "cpp",
+        "limits": "cpp",
+        "cstring": "cpp",
+        "map": "cpp"
     }
 }

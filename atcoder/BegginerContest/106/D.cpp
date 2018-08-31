@@ -1,16 +1,7 @@
 /*
-title:AtCoder Express 2
+title:
 
-url:https://abc106.contest.atcoder.jp/tasks/abc106_d
-
-1.vector<pair<Li, Ri>>をLiでソート
-2.pi<=Li を二分検索
-3.検索したものをRiでソート
-4.Ri<=qi を二分検索
-
-計算量 O(3M*logN)
-
-cf lower_bound を、pairを使って比較するときには、keyもpairにする必要がある。
+url:
 */
 
 #include <iostream>
@@ -29,39 +20,47 @@ using namespace std;
 #define REP(i, n) for (int i = 0; i < (n); i++)
 #define INF 1000000007
 
-typedef pair<int, int> p_i;
+typedef pair<int, int> pint;
+typedef long long ll;
 
-vector<p_i> data;
-
-int N, M, Q;
+//あるものの中身だけを知りたい場合には、累積和を使えば走査せずに済む
 
 int main()
 {
-    scanf("%d %d %d", &N, &M, &Q);
+    int N, M, Q;
+    cin >> N >> M >> Q;
+    int data[N + 1][N + 1];
+    memset(data, 0, sizeof(data));
     REP(i, M)
     {
-        int Li, Ri;
-        p_i p;
-        scanf("%d %d", &Li, &Ri);
-        p.first = Li - 1;
-        p.second = Ri - 1;
-        data.push_back(p);
+        int L, R;
+        scanf("%d %d", &L, &R);
+        data[L][R]++;
     }
-
-    //1. Liでソート
-    sort(data.begin(), data.end());
-
-    REP(i, Q)
+    int acc[N + 1][N + 1];
+    memset(acc, 0, sizeof(acc));
+    //累積和をつくるときのindexに注意。
+    //index=0のとき、0とし、index＝1にはじめの要素を対応させる
+    for (int i = 1; i <= N; i++)
     {
-        int p, q;
-        scanf("%d %d", &p, &q);
-        p--;
-        q--;
-        //pi<=Li を二分検索
-        p_i p_bgn = make_pair(p, p);
-        vector<p_i>::iterator lb = lower_bound(data.begin(), data.end(), p_bgn);
-        vector<p_i> tmp;
-        copy(lb, data.end(), tmp.begin());
-        p_i p_end = make_pair();
+        for (int j = 1; j <= N; j++)
+        {
+            acc[i][j] = acc[i - 1][j] + data[i][j];
+        }
     }
+    int p[Q], q[Q];
+    for (int i = 0; i < Q; i++)
+    {
+        scanf("%d %d", &p[i], &q[i]);
+    }
+    for (int i = 0; i < Q; i++)
+    {
+        int ans = 0;
+        for (int j = p[i]; j <= q[i]; j++)
+        {
+            ans += (acc[q[i]][j] - acc[p[i] - 1][j]);
+        }
+        cout << ans << endl;
+    }
+    return 0;
 }
