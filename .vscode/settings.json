@@ -10,6 +10,13 @@
         "string_view": "cpp",
         "vector": "cpp",
         "bitset": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "__split_buffer": "cpp",
+        "deque": "cpp",
+        "initializer_list": "cpp",
+        "queue": "cpp",
+        "algorithm": "cpp",
+        "cstdio": "cpp",
+        "limits": "cpp"
     }
 }
