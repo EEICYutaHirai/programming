@@ -16,6 +16,14 @@
         "algorithm": "cpp",
         "limits": "cpp",
         "cstring": "cpp",
-        "map": "cpp"
+        "map": "cpp",
+        "deque": "cpp",
+        "initializer_list": "cpp",
+        "list": "cpp",
+        "queue": "cpp",
+        "stack": "cpp",
+        "type_traits": "cpp",
+        "xhash": "cpp",
+        "xtree": "cpp"
     }
 }
