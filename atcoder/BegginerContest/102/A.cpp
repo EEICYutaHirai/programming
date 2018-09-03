@@ -14,6 +14,7 @@ url:
 #include <string>
 #include <utility>
 #include <cstring>
+#include <map>
 
 using namespace std;
 
@@ -23,7 +24,18 @@ using namespace std;
 typedef pair<int, int> pint;
 typedef long long ll;
 
+int gcd(int a, int b)
+{
+    if (b == 0)
+    {
+        return a;
+    }
+    return gcd(b, a % b);
+}
+
 int main()
 {
-    ll *data = (ll *)malloc(sizeof(ll) * INF);
+    int n;
+    cin >> n;
+    cout << n * 2 / gcd(2, n) << endl;
 }

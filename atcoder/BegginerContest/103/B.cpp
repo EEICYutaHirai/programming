@@ -14,6 +14,7 @@ url:
 #include <string>
 #include <utility>
 #include <cstring>
+#include <map>
 
 using namespace std;
 
@@ -25,5 +26,18 @@ typedef long long ll;
 
 int main()
 {
-    ll *data = (ll *)malloc(sizeof(ll) * INF);
+    string s, t;
+    cin >> s >> t;
+    for (int i = 0; i < s.size(); i++)
+    {
+        s = (s[s.size() - 1] + s);
+        s.pop_back();
+        if (s == t)
+        {
+            cout << "Yes" << endl;
+            return 0;
+        }
+    }
+    cout << "No" << endl;
+    return 0;
 }

@@ -14,6 +14,7 @@ url:
 #include <string>
 #include <utility>
 #include <cstring>
+#include <map>
 
 using namespace std;
 
@@ -25,5 +26,22 @@ typedef long long ll;
 
 int main()
 {
-    ll *data = (ll *)malloc(sizeof(ll) * INF);
+    int n;
+    cin >> n;
+    int data[n];
+    REP(i, n)
+    {
+        cin >> data[i];
+    }
+
+    int max = 0;
+    for (int i = 0; i < n - 1; i++)
+    {
+        for (int j = i + 1; j < n; j++)
+        {
+            if (abs(data[i] - data[j]) > max)
+                max = abs(data[i] - data[j]);
+        }
+    }
+    cout << max << endl;
 }

@@ -11,6 +11,7 @@
         "vector": "cpp",
         "bitset": "cpp",
         "iostream": "cpp",
+<<<<<<< HEAD
         "__split_buffer": "cpp",
         "deque": "cpp",
         "initializer_list": "cpp",
@@ -19,5 +20,21 @@
         "cstdio": "cpp",
         "limits": "cpp",
         "functional": "cpp"
+=======
+        "xstring": "cpp",
+        "xutility": "cpp",
+        "algorithm": "cpp",
+        "limits": "cpp",
+        "cstring": "cpp",
+        "map": "cpp",
+        "deque": "cpp",
+        "initializer_list": "cpp",
+        "list": "cpp",
+        "queue": "cpp",
+        "stack": "cpp",
+        "type_traits": "cpp",
+        "xhash": "cpp",
+        "xtree": "cpp"
+>>>>>>> 66c0b883d41b4cf5f0cfc493ed94e8cf9d0d9538
     }
 }
