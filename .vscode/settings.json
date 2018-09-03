@@ -17,6 +17,7 @@
         "queue": "cpp",
         "algorithm": "cpp",
         "cstdio": "cpp",
-        "limits": "cpp"
+        "limits": "cpp",
+        "functional": "cpp"
     }
 }
