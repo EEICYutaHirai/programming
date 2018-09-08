@@ -15,6 +15,7 @@ url:
 #include <utility>
 #include <cstring>
 #include <map>
+#include <cmath>
 
 using namespace std;
 
@@ -24,17 +25,11 @@ using namespace std;
 typedef pair<int, int> pint;
 typedef long long ll;
 
+//stringの比較では、辞書順で先に来るものが小さく評価される。
+
 int main()
 {
-    int a, b, c, d;
-    cin >> a >> b >> c >> d;
-    bool ans = false;
-    if (abs(a - c) <= d)
-        ans = true;
-    if (abs(a - b) <= d && abs(b - c) <= d)
-        ans = true;
-    if (ans)
-        cout << "Yes" << endl;
-    else
-        cout << "No" << endl;
+    string a = "at";
+    string b = "an";
+    cout << (a > b) << endl;
 }
