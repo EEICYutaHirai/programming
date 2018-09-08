@@ -15,6 +15,7 @@ url:
 #include <utility>
 #include <cstring>
 #include <map>
+#include <cmath>
 
 using namespace std;
 
@@ -26,15 +27,23 @@ typedef long long ll;
 
 int main()
 {
-    int a, b, c, d;
-    cin >> a >> b >> c >> d;
-    bool ans = false;
-    if (abs(a - c) <= d)
-        ans = true;
-    if (abs(a - b) <= d && abs(b - c) <= d)
-        ans = true;
-    if (ans)
-        cout << "Yes" << endl;
-    else
-        cout << "No" << endl;
+    int x;
+    int ans = -1;
+    cin >> x;
+    if (x == 1)
+    {
+        cout << x << endl;
+        return 0;
+    }
+    for (int i = 2; i <= sqrt(x); i++)
+    {
+        int tmp = i;
+        while (tmp * i <= x)
+        {
+            tmp *= i;
+        }
+        ans = tmp > ans ? tmp : ans;
+    }
+    cout << ans << endl;
+    return 0;
 }
