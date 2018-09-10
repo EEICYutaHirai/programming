@@ -49,22 +49,12 @@ int main()
         }
         if (!min_index.empty())
         {
-            auto c = [](const string &a, const string b) {
-                if (strcmp(a.c_str(), b.c_str()) >= 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            };
-            priority_queue<string, vector<string>, decltype(c)> q(c);
+            priority_queue<string, vector<string>, greater<string>> q;
             for (int i = 0; i < min_index.size(); i++)
             {
-                cout << min_index[i] << endl;
+                //cout << min_index[i] << endl;
                 string tmp = "";
-                for (int j = 0; j < 5; j++)
+                for (int j = 0; j + min_index[i] < s.size(); j++)
                 {
                     tmp += s[min_index[i] + j];
                     q.push(tmp);
@@ -72,12 +62,12 @@ int main()
             }
             while (!q.empty())
             {
-                if (count == 0 || q.top() != ans[count - 1])
+                ans[count] = q.top();
+                while ((!q.empty()) && q.top() == ans[count])
                 {
-                    ans[count] = q.top();
-                    count++;
+                    q.pop();
                 }
-                q.pop();
+                count++;
                 if (count == k)
                 {
                     cout << ans[k - 1] << endl;
