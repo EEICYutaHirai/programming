@@ -19,6 +19,7 @@
         "type_traits": "cpp",
         "xhash": "cpp",
         "xtree": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "cstdio": "cpp"
     }
 }

@@ -1,7 +1,10 @@
 /*
-title:
+title:C - Half and Half
 
-url:
+url:https://abc095.contest.atcoder.jp/tasks/arc096_a
+
+方針
+atcoder begeinner contestのstrange bank に似ている問題
 */
 
 #include <iostream>
