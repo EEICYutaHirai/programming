@@ -20,6 +20,7 @@
         "xhash": "cpp",
         "xtree": "cpp",
         "utility": "cpp",
-        "cstdio": "cpp"
+        "cstdio": "cpp",
+        "cstring": "cpp"
     }
 }
