@@ -11,6 +11,17 @@
         "string": "cpp",
         "xstring": "cpp",
         "vector": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "functional": "cpp",
+        "deque": "cpp",
+        "initializer_list": "cpp",
+        "list": "cpp",
+        "type_traits": "cpp",
+        "xhash": "cpp",
+        "xtree": "cpp",
+        "utility": "cpp",
+        "cstdio": "cpp",
+        "cstring": "cpp",
+        "cstdlib": "cpp"
     }
 }

@@ -16,7 +16,6 @@ url:
 #include <cstring>
 #include <map>
 #include <cmath>
-#include <iterator>
 
 using namespace std;
 
@@ -28,4 +27,15 @@ typedef long long ll;
 
 int main()
 {
+    int ans = 700;
+    string s;
+    cin >> s;
+    for (int i = 0; i < 3; i++)
+    {
+        if (s[i] == 'o')
+        {
+            ans += 100;
+        }
+    }
+    cout << ans << endl;
 }

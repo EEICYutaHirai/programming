@@ -16,7 +16,6 @@ url:
 #include <cstring>
 #include <map>
 #include <cmath>
-#include <iterator>
 
 using namespace std;
 
@@ -28,4 +27,17 @@ typedef long long ll;
 
 int main()
 {
+    int a, b, c;
+    cin >> a >> b >> c;
+    int k;
+    cin >> k;
+    int max_n = max({a, b, c});
+    int ans = a + b + c;
+    ans -= max_n;
+    for (int i = 0; i < k; i++)
+    {
+        max_n *= 2;
+    }
+    ans += max_n;
+    cout << ans << endl;
 }

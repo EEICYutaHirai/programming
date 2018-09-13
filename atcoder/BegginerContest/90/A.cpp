@@ -28,4 +28,15 @@ typedef long long ll;
 
 int main()
 {
+    string s[3];
+    REP(i, 3)
+    {
+        cin >> s[i];
+    }
+    REP(i, 3)
+    {
+        cout << s[i][i];
+    }
+    cout << endl;
+    return 0;
 }

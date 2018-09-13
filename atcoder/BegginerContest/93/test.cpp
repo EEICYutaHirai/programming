@@ -16,7 +16,6 @@ url:
 #include <cstring>
 #include <map>
 #include <cmath>
-#include <iterator>
 
 using namespace std;
 
@@ -28,4 +27,10 @@ typedef long long ll;
 
 int main()
 {
+    int data[3] = {1, 2, 3};
+    (*min_element(data, data + 3))++;
+    for (int i = 0; i < 3; i++)
+    {
+        cout << data[i] << endl;
+    }
 }

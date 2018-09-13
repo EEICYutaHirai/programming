@@ -16,7 +16,6 @@ url:
 #include <cstring>
 #include <map>
 #include <cmath>
-#include <iterator>
 
 using namespace std;
 
@@ -28,4 +27,7 @@ typedef long long ll;
 
 int main()
 {
+    int a, b, c, d;
+    cin >> a >> b >> c >> d;
+    cout << min(a, b) + min(c, d) << endl;
 }

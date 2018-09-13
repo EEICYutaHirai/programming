@@ -16,7 +16,6 @@ url:
 #include <cstring>
 #include <map>
 #include <cmath>
-#include <iterator>
 
 using namespace std;
 
@@ -28,4 +27,27 @@ typedef long long ll;
 
 int main()
 {
+    int n, m, x;
+    cin >> n >> m >> x;
+    int cost[m];
+    REP(i, m)
+    {
+        cin >> cost[i];
+    }
+    int ans = 0;
+    int lans = 0;
+    int rans = 0;
+    for (int i = 0; i < m; i++)
+    {
+        if (cost[i] < x)
+        {
+            lans++;
+        }
+        else
+        {
+            rans++;
+        }
+    }
+    ans = min(lans, rans);
+    cout << ans << endl;
 }

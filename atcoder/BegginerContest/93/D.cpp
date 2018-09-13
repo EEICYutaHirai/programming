@@ -16,16 +16,30 @@ url:
 #include <cstring>
 #include <map>
 #include <cmath>
-#include <iterator>
 
 using namespace std;
 
 #define REP(i, n) for (int i = 0; i < (n); i++)
 #define INF 1000000007
+#define int long long
 
 typedef pair<int, int> pint;
 typedef long long ll;
 
-int main()
+signed main()
 {
+    int q;
+    cin >> q;
+    pint data[q];
+    REP(i, q)
+    {
+        int a, b;
+        cin >> a >> b;
+        data[i].first = a;
+        data[i].second = b;
+    }
+    REP(i, q)
+    {
+        int ans = 0;
+    }
 }

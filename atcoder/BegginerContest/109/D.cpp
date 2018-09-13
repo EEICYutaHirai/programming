@@ -24,27 +24,58 @@ using namespace std;
 typedef pair<int, int> pint;
 typedef long long ll;
 
-int h, w;
-int coin[500][500];
-bool used[500][500];
-
 int main()
 {
+    int h, w;
     cin >> h >> w;
-    int nodd = 0;
-    for (int i = 0; i < h; i++)
+    int coin[h][w];
+    int coin2[h][w];
+    REP(i, h)
     {
-        for (int j = 0; j < w; j++)
+        REP(j, w)
         {
             cin >> coin[i][j];
+            coin2[i][j] = coin[i][j];
         }
     }
-    int dx[4] = {1, -1, 0, 0};
-    int dy[4] = {0, 0, 1, -1};
-    for (int i = 0; i < h; i++)
+    int count = 0;
+    REP(i, h - 1)
     {
-        for (int j = 0; j < w; j++)
+        REP(j, w)
         {
-                }
+            if (coin[i][j] % 2 == 1)
+            {
+                coin[i + 1][j]++;
+                count++;
+            }
+        }
+    }
+    REP(i, w - 1)
+    {
+        if (coin[h - 1][i] % 2 == 1)
+        {
+            coin[h - 1][i + 1]++;
+            count++;
+        }
+    }
+    cout << count << endl;
+    REP(i, h - 1)
+    {
+        REP(j, w)
+        {
+            if (coin2[i][j] % 2 == 1)
+            {
+                cout << i + 1 << " " << j + 1 << " " << i + 2 << " " << j + 1 << endl;
+                coin2[i + 1][j]++;
+            }
+        }
+    }
+    REP(i, w - 1)
+    {
+        if (coin2[h - 1][i] % 2 == 1)
+        {
+            cout << h << " " << i + 1 << " " << h << " " << i + 2 << endl;
+            coin2[h - 1][i + 1]++;
+        }
     }
 }

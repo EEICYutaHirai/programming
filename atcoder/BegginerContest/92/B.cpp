@@ -16,7 +16,6 @@ url:
 #include <cstring>
 #include <map>
 #include <cmath>
-#include <iterator>
 
 using namespace std;
 
@@ -28,4 +27,24 @@ typedef long long ll;
 
 int main()
 {
+    int n;
+    cin >> n;
+    int d, x;
+    cin >> d >> x;
+    int a[n];
+    REP(i, n)
+    {
+        cin >> a[i];
+    }
+    int ans = n + x;
+    for (int i = 0; i < n; i++)
+    {
+        int day = 1;
+        while (day + a[i] <= d)
+        {
+            day += a[i];
+            ans++;
+        }
+    }
+    cout << ans << endl;
 }

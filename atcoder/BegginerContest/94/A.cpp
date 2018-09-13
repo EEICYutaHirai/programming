@@ -16,7 +16,6 @@ url:
 #include <cstring>
 #include <map>
 #include <cmath>
-#include <iterator>
 
 using namespace std;
 
@@ -28,4 +27,16 @@ typedef long long ll;
 
 int main()
 {
+    int a, b, x;
+    cin >> a >> b >> x;
+    if (x <= b + a && x >= a)
+    {
+        cout << "YES" << endl;
+        return 0;
+    }
+    else
+    {
+        cout << "NO" << endl;
+        return 0;
+    }
 }

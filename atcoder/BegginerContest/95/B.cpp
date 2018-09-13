@@ -16,7 +16,6 @@ url:
 #include <cstring>
 #include <map>
 #include <cmath>
-#include <iterator>
 
 using namespace std;
 
@@ -28,4 +27,17 @@ typedef long long ll;
 
 int main()
 {
+    int n, x;
+    cin >> n >> x;
+    int m[n];
+    int min = INF;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> m[i];
+        x -= m[i];
+        min = min > m[i] ? m[i] : min;
+    }
+    int ans = n;
+    ans += x / min;
+    cout << ans << endl;
 }
