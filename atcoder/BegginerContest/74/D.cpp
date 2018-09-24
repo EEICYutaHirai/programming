@@ -54,10 +54,6 @@ bool bellman(int start)
         {
             if (d[i] > d[v] + data[v][i])
             {
-                rep(j, N)
-                {
-                    used_road[j][i] = false;
-                }
                 used_road[i][v] = true;
                 d[i] = d[v] + data[v][i];
                 q.push(pint(d[i], i));
@@ -69,17 +65,6 @@ bool bellman(int start)
         if (data[start][j] != d[j])
         {
             return false;
-        }
-    }
-    rep(i, N)
-    {
-        rep(j, N)
-        {
-            if (used_road[i][j])
-            {
-                has_road[i][j] = true;
-                has_road[j][i] = true;
-            }
         }
     }
     return true;
