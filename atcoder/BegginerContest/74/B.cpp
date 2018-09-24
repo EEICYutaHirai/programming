@@ -28,8 +28,19 @@ typedef long long ll;
 
 int main()
 {
-    int n, a;
-    cin >> n >> a;
-    cout << n * n - a << endl;
+    int n, k;
+    cin >> n >> k;
+    int x[n];
+    rep(i, n)
+    {
+        cin >> x[i];
+    }
+
+    int ans = 0;
+    rep(i, n)
+    {
+        ans += 2 * min(x[i], k - x[i]);
+    }
+    cout << ans << endl;
     return 0;
 }
