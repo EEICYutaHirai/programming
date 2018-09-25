@@ -28,4 +28,16 @@ typedef long long ll;
 
 int main()
 {
+    int a, b;
+    cin >> a >> b;
+    if ((a + b) % 2 == 1)
+    {
+        cout << (a + b) / 2 + 1 << endl;
+        return 0;
+    }
+    else
+    {
+        cout << (a + b) / 2 << endl;
+        return 0;
+    }
 }

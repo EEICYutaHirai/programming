@@ -28,4 +28,20 @@ typedef long long ll;
 
 int main()
 {
+    int ans = INF;
+    int n;
+    cin >> n;
+    rep(i, n)
+    {
+        int tmp;
+        int tmp_ans = 0;
+        cin >> tmp;
+        while ((tmp % 2) == 0)
+        {
+            tmp_ans++;
+            tmp /= 2;
+        }
+        ans = min(ans, tmp_ans);
+    }
+    cout << ans << endl;
 }

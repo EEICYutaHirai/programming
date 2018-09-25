@@ -28,4 +28,7 @@ typedef long long ll;
 
 int main()
 {
+    int n;
+    cin >> n;
+    cout << 48 - n << endl;
 }

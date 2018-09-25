@@ -28,4 +28,23 @@ typedef long long ll;
 
 int main()
 {
+    int n;
+    cin >> n;
+    int ans = 0;
+    vector<int> data;
+    rep(i, n)
+    {
+        int a;
+        cin >> a;
+        if (data.end() != find(data.begin(), data.end(), a))
+        {
+            continue;
+        }
+        else
+        {
+            data.push_back(a);
+            ans++;
+        }
+    }
+    cout << ans << endl;
 }

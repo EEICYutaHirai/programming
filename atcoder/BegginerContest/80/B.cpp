@@ -28,4 +28,19 @@ typedef long long ll;
 
 int main()
 {
+    int n;
+    cin >> n;
+    string s = to_string(n);
+    int x = 0;
+    rep(i, s.size())
+    {
+        x += (s[i] - '0');
+    }
+    if (n % x == 0)
+    {
+        cout << "Yes" << endl;
+        return 0;
+    }
+    cout << "No" << endl;
+    return 0;
 }

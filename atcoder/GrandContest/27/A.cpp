@@ -28,4 +28,25 @@ typedef long long ll;
 
 int main()
 {
+    int n, x;
+    cin >> n >> x;
+    priority_queue<int, vector<int>, greater<int>> q;
+    rep(i, n)
+    {
+        int tmp;
+        cin >> tmp;
+        q.push(tmp);
+    }
+    int ans = 0;
+    while (q.size() && x > 0)
+    {
+        x -= q.top();
+        ans++;
+        q.pop();
+    }
+    if (x != 0)
+    {
+        ans--;
+    }
+    cout << ans << endl;
 }

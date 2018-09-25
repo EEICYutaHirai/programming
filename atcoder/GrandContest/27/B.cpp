@@ -28,4 +28,23 @@ typedef long long ll;
 
 int main()
 {
+    int n, X;
+    cin >> n >> X;
+    int x[n];
+    bool used[n];
+
+    int ans = 0;
+    ans += X * n;
+    fill(used, used + n, false);
+    int nlarge = 0;
+    rep(i, n)
+    {
+        cin >> x[i];
+        if (x[i] >= X / 2)
+            nlarge++;
+    }
+
+    rep(i, n)
+    {
+        }
 }

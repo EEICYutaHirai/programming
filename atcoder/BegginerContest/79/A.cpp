@@ -28,4 +28,26 @@ typedef long long ll;
 
 int main()
 {
+    int n;
+    cin >> n;
+    string s = to_string(n);
+    rep(i, 2)
+    {
+        bool ans = true;
+        for (int j = i; j < i + 3; j++)
+        {
+            if (s[i] != s[j])
+            {
+                ans = false;
+            }
+        }
+        if (ans)
+        {
+            cout << "Yes" << endl;
+            return 0;
+        }
+    }
+
+    cout << "No" << endl;
+    return 0;
 }
