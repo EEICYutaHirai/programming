@@ -49,9 +49,10 @@ int main()
     {
         rep(j, i)
         {
+            int tmp_ans = 1;
             if (data[i] < data[j])
             {
-            }
+                        }
         }
     }
 }
