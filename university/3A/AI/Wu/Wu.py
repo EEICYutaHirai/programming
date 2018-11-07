@@ -98,7 +98,7 @@ class Wu:
                     self.rems[-1], self.tris[index],  self.dep_vars[len(self.tris)-1-index])[-1])
         return self.rems
 
-    #式のlist, functionsを既約にする
+    # 式のlist, functionsを既約にする
     def make_irreducible(self):
         for index1 in range(len(self.tris)):
             for index2 in range(index1+1, len(self.tris)):
@@ -106,56 +106,51 @@ class Wu:
                 self.tris[index1] = sympy.numer(tmp)
                 self.tris[index2] = sympy.denom(tmp)
 
-    def print_functions(self, name, functions):
-        print()
-        if self.do_print:
-            for index in range(functions):
-                if self.do_latex:
-                    print(name+str(index)+": " +
-                          str(sympy.latex(functions[index])))
-                else:
-                    print(name+str(index)+": "+str(functions[index]))
-
     def prove(self):
         print()
         if self.do_print:
-            print("Hypothetical is following.")
-            for func in hyps:
+            for index in range(len(hyps)):
                 if self.do_latex:
-                    print(sympy.latex(func))
+                    print("Hyp_{"+str(index+1)+"}"+" = " +
+                          str(sympy.latex(hyps[index])))
                 else:
-                    print(func)
-            print("Try to solve following conclusion.")
+                    print("Hyp"+str(index+1)+" = "+str(hyps[index]))
             if self.do_latex:
-                print(sympy.latex(self.conc))
+                print("Conc ="+str(sympy.latex(self.conc)))
             else:
-                print(self.conc)
+                print("Conc = "+str(self.conc))
         # 三角化を行う
         self.tris = self.triangulation()
         if self.do_print:
             print()
             for index in range(len(self.tris)):
+                print_vars = "(" + str(self.dep_vars[0])
+                for index_ in range(1, len(self.dep_vars)-index):
+                    print_vars = print_vars + \
+                        ", " + str(self.dep_vars[index_])
+                print_vars = print_vars + ")"
                 if self.do_latex:
-                    print("Tri"+str(index)+": " +
+                    print("Tri"+"_{"+str(index+1)+"}"+print_vars+" = " +
                           str(sympy.latex(self.tris[index])))
                 else:
-                    print("Tri"+str(index)+": "+str(self.tris[index]))
+                    print("Tri"+str(index+1)+print_vars +
+                          " = "+str(self.tris[index]))
         # remを作る
         self.make_remainder()
         if self.do_print:
             print()
             for index in range(len(self.rems)):
                 if self.do_latex:
-                    print("Rem"+str(index)+": " +
+                    print("Rem_{"+str(index)+"}"+" = " +
                           str(sympy.latex(self.rems[index])))
                 else:
-                    print("Rem"+str(index)+": " +
+                    print("Rem"+str(index)+"=" +
                           str(self.rems[index]))
         if self.do_print:
             if self.do_latex:
-                print("Subsidaries: "+str(sympy.latex(self.subsidaries)))
+                print("Subsidaries = "+str(sympy.latex(self.subsidaries)))
             else:
-                print("Subsidaries: "+str(self.subsidaries))
+                print("Subsidaries = "+str(self.subsidaries))
 
         print()
         if self.rems[-1] == 0:
@@ -183,28 +178,34 @@ class Wu:
             if self.do_print:
                 print()
                 for index in range(len(self.tris)):
+                    print_vars = "(" + str(self.dep_vars[0])
+                    for index_ in range(1, len(self.dep_vars)-index):
+                        print_vars = print_vars + \
+                            ", " + str(self.dep_vars[index_])
+                    print_vars = print_vars + ")"
                     if self.do_latex:
-                        print("Tri"+str(index)+": " +
+                        print("Tri"+"_{"+str(index+1)+"}"+print_vars+" = " +
                               str(sympy.latex(self.tris[index])))
                     else:
-                        print("Tri"+str(index)+": "+str(self.tris[index]))
+                        print("Tri"+str(index+1)+print_vars +
+                              " = "+str(self.tris[index]))
             self.make_remainder()
             if self.do_print:
                 print()
                 for index in range(len(self.rems)):
                     if self.do_latex:
-                        print("Rem"+str(index)+": " +
+                        print("Rem"+str(index)+" = " +
                               str(sympy.latex(self.rems[index])))
                     else:
-                        print("Rem"+str(index)+": " +
+                        print("Rem"+str(index)+" = " +
                               str(self.rems[index]))
             if(self.rems[-1] != 0):
                 are_all_rem_zero = False
             if self.do_print:
                 if self.do_latex:
-                    print("Subsidaries: "+str(sympy.latex(self.subsidaries)))
+                    print("Subsidaries = "+str(sympy.latex(self.subsidaries)))
                 else:
-                    print("Subsidaries: "+str(self.subsidaries))
+                    print("Subsidaries = "+str(self.subsidaries))
 
         if are_all_rem_zero:
             print("The conclusion has proved.")
@@ -235,7 +236,7 @@ if __name__ == '__main__':
                 hyps[index] = parse_expr(hyps[index])
 
     else:
-        print("Plese input hypotheticals and conclusion")
+        print("Plese input hypotheticals and conclusion.")
         while True:
             input_s = input()
             if(input_s == ""):
@@ -254,6 +255,7 @@ if __name__ == '__main__':
 
     dependent_vars = []
     if args.vars:
+        args.vars.replace(" ", "")
         dependent_vars = [str(item) for item in args.vars.split(
             ',')]
         for index in range(len(dependent_vars)):

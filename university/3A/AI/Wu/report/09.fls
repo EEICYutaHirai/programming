@@ -1,0 +1,11 @@
+PWD /Users/paperbackprogrammer/Desktop/YutaHirai/programming/university/3A/AI/Wu/report
+INPUT /usr/local/texlive/2018/texmf.cnf
+INPUT /usr/local/texlive/2018/texmf-dist/web2c/texmf.cnf
+INPUT /usr/local/texlive/2018/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT /Users/paperbackprogrammer/Desktop/YutaHirai/programming/university/3A/AI/Wu/report/09.tex
+OUTPUT 09.log
+INPUT /usr/local/texlive/2018/texmf-dist/tex/platex/jsclasses/jsarticle.cls
+INPUT /usr/local/texlive/2018/texmf-dist/tex/platex/jsclasses/jsarticle.cls
+INPUT 09.aux
+INPUT 09.aux
+OUTPUT 09.aux
