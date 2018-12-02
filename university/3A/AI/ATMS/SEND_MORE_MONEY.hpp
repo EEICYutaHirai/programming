@@ -23,7 +23,9 @@ class SEND_MORE_MONEY : public Lattice
         {
             if (v_node[i]->get_set()[4] != 1)
             {
-                delete v_node[i];
+                //delete v_node[i];
+                cout << v_node.size() << endl;
+                cout << i << endl;
                 v_node.erase(v_node.begin() + i);
                 i--;
                 n_no_good++;
@@ -37,7 +39,7 @@ class SEND_MORE_MONEY : public Lattice
         {
             if (v_node[i]->get_set()[0] == 0)
             {
-                delete v_node[i];
+                //delete v_node[i];
                 v_node.erase(v_node.begin() + i);
                 i--;
                 n_no_good++;
@@ -54,7 +56,7 @@ class SEND_MORE_MONEY : public Lattice
                 v_node[i]->get_set()[7] != -1 &&
                 (v_node[i]->get_set()[1] + v_node[i]->get_set()[3]) % 10 != v_node[i]->get_set()[7])
             {
-                delete v_node[i];
+                //delete v_node[i];
                 v_node.erase(v_node.begin() + i);
                 i--;
                 n_no_good++;
@@ -72,7 +74,7 @@ class SEND_MORE_MONEY : public Lattice
                 (((v_node[i]->get_set()[2] + v_node[i]->get_set()[6]) % 10 != v_node[i]->get_set()[1]) ||
                  ((v_node[i]->get_set()[2] + v_node[i]->get_set()[6]) % 10 != v_node[i]->get_set()[1] - 1)))
             {
-                delete v_node[i];
+                //delete v_node[i];
                 v_node.erase(v_node.begin() + i);
                 i--;
                 n_no_good++;
@@ -90,7 +92,7 @@ class SEND_MORE_MONEY : public Lattice
                 (((v_node[i]->get_set()[1] + v_node[i]->get_set()[5]) % 10 != v_node[i]->get_set()[2]) ||
                  ((v_node[i]->get_set()[1] + v_node[i]->get_set()[5]) % 10 != v_node[i]->get_set()[2] - 1)))
             {
-                delete v_node[i];
+                //delete v_node[i];
                 v_node.erase(v_node.begin() + i);
                 i--;
                 n_no_good++;
@@ -108,7 +110,7 @@ class SEND_MORE_MONEY : public Lattice
                 (((v_node[i]->get_set()[0] + v_node[i]->get_set()[4]) % 10 != v_node[i]->get_set()[5]) ||
                  ((v_node[i]->get_set()[0] + v_node[i]->get_set()[4]) % 10 != v_node[i]->get_set()[5] - 1)))
             {
-                delete v_node[i];
+                //delete v_node[i];
                 v_node.erase(v_node.begin() + i);
                 i--;
                 n_no_good++;
@@ -126,7 +128,7 @@ class SEND_MORE_MONEY : public Lattice
                 {
                     if (v_node[k]->get_set()[i] == v_node[k]->get_set()[j])
                     {
-                        delete v_node[k];
+                        //delete v_node[k];
                         v_node.erase(v_node.begin() + k);
                         k--;
                         n_no_good++;
@@ -146,7 +148,7 @@ class SEND_MORE_MONEY : public Lattice
             int money = tmp[4] * 10000 + tmp[5] * 1000 + tmp[2] * 100 + tmp[1] * 10 + tmp[7];
             if (send + more != money)
             {
-                delete v_node[i];
+                //delete v_node[i];
                 v_node.erase(v_node.begin() + i);
                 i--;
                 n_no_good++;
